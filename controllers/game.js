@@ -17,8 +17,12 @@ const getGame = (req, res) => {
   }
 }
 
-const playGame = () => {
-  console.log('i played the game');
+const playGame = (req, res) => {
+  const game = games.find(g => g.id === req.params.id);
+  if (!game) return res.status(404).send('Not found.');
+ 
+  const result = game.battle();
+  res.status(200).send(result);
 }
 
 module.exports = { startGame, getGame, playGame };

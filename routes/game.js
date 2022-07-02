@@ -9,9 +9,10 @@ router.put('/', startGame);
 router.get('/:id', getGame);
 
 // Play a round of an existing game
-router.post('/:id/play', (req, res) => {
-  playGame();
-  res.send('Play route is working.');
-});
+// router.post('/:id/play', (req, res) => {
+//   playGame();
+//   res.send('Play route is working.');
+// });
+router.post('/:id/play', playGame);
 
 module.exports = router;
