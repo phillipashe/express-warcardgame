@@ -6,6 +6,7 @@ class Game {
     this.id = uuid.v4();
     this.firstPlayerCards = [];
     this.secondPlayerCards = [];
+    this.playedCards = [];
     this.init();
   }
 
@@ -14,6 +15,9 @@ class Game {
     [this.firstPlayerCards, this.secondPlayerCards] = deck.dealCards();
   }
 
+  play() {
+
+  }
   // play a round
 }
 

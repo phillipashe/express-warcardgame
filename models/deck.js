@@ -1,3 +1,5 @@
+const Card = require('./card');
+
 class Deck {
   constructor() {
     this.cards = [];
@@ -6,14 +8,14 @@ class Deck {
   }
 
   /* 
-    Fill the deck with 52 cards. Note that suit is not required,
-    nor do I need to show which card.  Therefore I can substitute
-    face cards with integers.
+    Fill the deck with 52 cards. 
   */
   #fillDeck() {
-    for (let i = 0; i < 13; i++) {
-      for (let j = 0; j < 4; j++) {
-        this.cards.push(i);
+    const suits = ['Spades', 'Diamonds', 'Clubs', 'Hearts'];
+    for (let i = 2; i < 15; i++) {
+      for (const suit of suits) {
+        const card = new Card(i, suit);
+        this.cards.push(card);
       }
     }
   }
@@ -30,7 +32,7 @@ class Deck {
     this.#fillDeck();
     this.#shuffleDeck();
     // spits the deck in half
-    return [this.cards.slice(0,26), this.cards.slice(26,52)]
+    return [this.cards.slice(0, 26), this.cards.slice(26, 52)]
   }
 }
 
