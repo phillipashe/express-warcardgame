@@ -8,11 +8,7 @@ router.put('/', startGame);
 // Get the status of a game of war
 router.get('/:id', getGame);
 
-// Play a round of an existing game
-// router.post('/:id/play', (req, res) => {
-//   playGame();
-//   res.send('Play route is working.');
-// });
+// play a round of war in a created game
 router.post('/:id/play', playGame);
 
 module.exports = router;

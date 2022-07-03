@@ -28,6 +28,7 @@ class Deck {
     }
   }
 
+  // deal the deck out to the two players
   dealCards() {
     this.#fillDeck();
     this.#shuffleDeck();
