@@ -24,6 +24,7 @@ class Game {
     return cards;
   }
 
+  // draw one card from each respective player's deck
   #drawCards(battleResult) {
     const firstPlayerCard = this.firstPlayerCards.shift();
     battleResult.playerOne.cards.push(firstPlayerCard);
@@ -32,7 +33,9 @@ class Game {
     return [firstPlayerCard, secondPlayerCard];
   }
 
+  // add all cards in play to the first player's deck
   #addToFirstPlayer(battleResult) {
+    // shuffling played cards reduces the number of turns on average
     this.firstPlayerCards = [...this.firstPlayerCards, ...this.#shuffle([...battleResult.playerOne.cards, ...battleResult.playerTwo.cards])];
     battleResult.playerOne.deck = this.firstPlayerCards.length;
     battleResult.playerTwo.deck = this.secondPlayerCards.length;
@@ -40,7 +43,9 @@ class Game {
     return battleResult;
   }
 
+  // add all cards in play to the second player's deck
   #addToSecondPlayer(battleResult) {
+    // shuffling played cards reduces the number of turns on average
     this.secondPlayerCards = [...this.secondPlayerCards, ...this.#shuffle([...battleResult.playerOne.cards, ...battleResult.playerTwo.cards])];
     battleResult.playerOne.deck = this.firstPlayerCards.length;
     battleResult.playerTwo.deck = this.secondPlayerCards.length;
@@ -49,7 +54,6 @@ class Game {
 
   // play a round of War
   battle() {
-
     // result object - will be populated before returning
     const battleResult = {
       winner: "",

@@ -10,7 +10,6 @@ describe('Game', function () {
   test('battle() should return a result', () => {
     const game = new Game();
     const res = game.battle();
-    // console.log(JSON.stringify(res, null, 4))
     expect(res.winner).toBeTruthy();
   });
 
@@ -56,10 +55,11 @@ describe('Game', function () {
     expect(res.winner).toEqual('Player Two');
   });
 
-  // test('both players cards should equal 52', () => {
-  //   const game = new Game();
-  //   const res = game.battle;
-  //   const total = res.playerOne.cards.length + res.playerTwo.cards.length;
-  //   expect(total).toEqual(52);
-  // });
+  test('both players cards should equal 52', () => {
+    const game = new Game();
+    const res = game.battle();
+    const total = res.playerOne.deck + res.playerTwo.deck;
+    console.log(JSON.stringify(res))
+    expect(total).toEqual(52);
+  });
 });
