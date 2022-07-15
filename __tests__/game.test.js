@@ -62,4 +62,14 @@ describe('Game', function () {
     console.log(JSON.stringify(res))
     expect(total).toEqual(52);
   });
+
+  test ('running out of cards on a tie should still equal 52', () => {
+    const game = new Game();
+    game.firstPlayerCards[0].value = 2;
+    game.firstPlayerCards = [...game.firstPlayerCards, ...game.secondPlayerCards.slice(1,26)];
+    game.secondPlayerCards = [{value: 2, name: "2", suit: "Clubs"}];
+    const res = game.battle();
+    expect(res.playerOne.deck).toEqual(52);
+
+  });
 });

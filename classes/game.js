@@ -93,11 +93,13 @@ class Game {
     if (!this.secondPlayerCards.length) {
       battleResult.winner = "Player One";
       this.firstPlayerCards = [...this.firstPlayerCards, ...battleResult.playerOne.cards, ...battleResult.playerTwo.cards];
+      this.firstPlayerCards = this.firstPlayerCards.filter(c => c!==undefined);
       battleResult.playerOne.deck = this.firstPlayerCards.length;
     }
     if (!this.firstPlayerCards.length) {
       battleResult.winner = "Player Two";
       this.secondPlayerCards = [...this.secondPlayerCards, ...battleResult.playerOne.cards, ...battleResult.playerTwo.cards];
+      this.secondPlayerCards = this.secondPlayerCards.filter(c => c!==undefined);
       battleResult.playerTwo.deck = this.secondPlayerCards.length;
     }
 
