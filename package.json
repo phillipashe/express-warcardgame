@@ -1,0 +1,30 @@
+{
+  "name": "express-warcardgame",
+  "version": "1.0.0",
+  "description": "Implement a card game server.",
+  "main": "start.js",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/.bin/jest --coverage",
+    "watch": "nodemon ./start.js",
+    "server": "node ./start.js"
+  },
+  "keywords": [
+    "test",
+    "war",
+    "card",
+    "game",
+    "express"
+  ],
+  "author": "Phillip Ashe",
+  "license": "ISC",
+  "homepage": "https://github.com/phillipashe",
+  "dependencies": {
+    "express": "^4.18.1",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "jest": "^28.1.2",
+    "nodemon": "^2.0.18",
+    "supertest": "^6.2.4"
+  }
+}
