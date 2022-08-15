@@ -3,9 +3,6 @@
 ## Overview
 `node-warcard-game` is a simple express backend developed to simulate two players playing through a game of War.  This was written with Node v16.15.1, using Express v4.18.1, though it will likely work with other versions.  Tests are written using Jest.
 
-## Notes
-`node-warcardgame-codechallenge` isn't perfect.  This app represents a few hours of work over the weekend, and should not be considered indicative of the full potential of this project.
-
 ## Pre-requisites
 - npm 
 - Node.js
@@ -15,7 +12,6 @@
 - nvm (in case of a Node version related issue)
 
 ## Install
-**Note that this app was delivered as a zip file.  It should work "out of the box".**
 - in the root of the repo, run `npm install`
 - if you are using Visual Studio Code and would like to use the debugger with `nodemon`, install it globally with `npm install -g nodemon`.
 
